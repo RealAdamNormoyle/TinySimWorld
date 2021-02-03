@@ -9,7 +9,8 @@ public class GameManager : Singleton<GameManager>
 
     GameObject m_playerPrefab;
     PlayerController m_player;
-    
+
+    public PlayerInventory PlayerInventory = new PlayerInventory();
     public PlayerController Player { get { return m_player; } }
     public ShopInterface ShopInterface { get { return m_shopInterface; } }
 
