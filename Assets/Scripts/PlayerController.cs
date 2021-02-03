@@ -43,4 +43,9 @@ public class PlayerController : MonoBehaviour
         transform.Translate((Vector3)m_movementDirection * (m_walkSpeed * Time.fixedDeltaTime),Space.World);
     }
 
+    public void AllowInput(bool val)
+    {
+        m_allowInput = val;
+    }
+
 }
