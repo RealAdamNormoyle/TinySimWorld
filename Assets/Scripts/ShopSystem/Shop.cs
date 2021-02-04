@@ -13,6 +13,8 @@ public class Shop : MonoBehaviour
     [SerializeField] string m_name;
     [SerializeField] ShopType m_shopType;
 
+    bool m_isOpen;
+    bool m_isPlayerInTrigger;
     List<Item> m_items = new List<Item>();
     public string ShopName { get { return m_name; } }
     public ShopType Type { get { return m_shopType; } }
@@ -22,6 +24,7 @@ public class Shop : MonoBehaviour
     void Start()
     {
         LoadItems();
+        m_isOpen = false;
     }
 
     void LoadItems()
@@ -34,8 +37,36 @@ public class Shop : MonoBehaviour
         
     }
 
-    public void ShowInterface()
+    public void OnTriggerEnter2D(Collider2D collision)
     {
-        GameManager.Instance.ShopInterface.Show(this);
+        if(collision.gameObject.CompareTag("Player"))
+        {
+            m_isPlayerInTrigger = true;
+        }
+    }
+
+    public void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            m_isPlayerInTrigger = false;
+        }
+    }
+
+    public void Update()
+    {
+        if (m_isOpen | !m_isPlayerInTrigger)
+            return;
+
+        if (Input.GetButtonDown("Action"))
+        {
+            m_isOpen = true;
+            GameManager.Instance.ShopInterface.Show(this);
+        }
+    }
+
+    public void OnClosedInterface()
+    {
+        m_isOpen = false;
     }
 }
