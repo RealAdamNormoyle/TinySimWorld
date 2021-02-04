@@ -12,21 +12,31 @@ public class InventoryItem : MonoBehaviour
     [SerializeField] GameObject m_useButton;
 
     Item m_item;
-    Action<Item> m_equipCallback;
+    Action<Item> m_callback;
 
-    public void Setup(Item item, Action<Item> equipCallback)
+    public void Setup(Item item, Action<Item> callback)
     {
         m_item = item;
         m_nameText.text = item.Name;
         m_icon.sprite = item.Icon;
+        m_callback = callback;
 
-        m_equipCallback = equipCallback;
-        m_equipButton.SetActive(true);
-        m_useButton.SetActive(false);    
+        if(m_item.Type == Item.ItemType.CONSUMABLE)
+        {
+            m_equipButton.SetActive(false);
+            m_useButton.SetActive(true);
+        }
+        else
+        {
+            m_equipButton.SetActive(true);
+            m_useButton.SetActive(false);
+        }
+ 
     }
 
     public void OnEquipButtonPressed()
     {
-        m_equipCallback?.Invoke(m_item);
+        m_callback?.Invoke(m_item);
     }
+
 }
