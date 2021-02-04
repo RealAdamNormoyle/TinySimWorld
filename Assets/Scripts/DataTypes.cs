@@ -6,6 +6,6 @@ using UnityEngine;
 public class PlayerInventory
 {
     public int Coins;
-    public int Gems;
     public List<Item> Items = new List<Item>();
+    public Item[] EquippedItems;
 }
