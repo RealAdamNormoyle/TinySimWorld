@@ -190,7 +190,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_nameText: {fileID: 6209562951171939523}
   m_descriptionText: {fileID: 4161349667636555168}
-  m_sellCostText: {fileID: 8156005147027459083}
+  m_sellCostText: {fileID: 2116210495949886952}
   m_buyCostText: {fileID: 145077035959681045}
   m_icon: {fileID: 4671732648210762230}
   m_buyButton: {fileID: 5229330891713042906}
