@@ -33,7 +33,7 @@ public class ShopInterface : UIScreen
 
     void UpdateStoreDetails()
     {
-        m_titleText.text = m_activeShop.ShopName;
+        m_titleText.text = $"{m_activeShop.ShopName} Merchant";
         m_coinsText.text = GameManager.Instance.PlayerInventory.Coins.ToString();
     }
 
