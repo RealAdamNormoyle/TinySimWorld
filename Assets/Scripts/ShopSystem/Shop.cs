@@ -6,7 +6,8 @@ public class Shop : MonoBehaviour
 {
     public enum ShopType
     {
-        Clothing
+        Clothing,
+        Consumable
     }
 
 

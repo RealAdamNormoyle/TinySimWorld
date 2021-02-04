@@ -7,7 +7,8 @@ public class Item : ScriptableObject
     public enum ItemType
     {
         CLOTHING_TOP,
-        CLOTHING_SHOES
+        CLOTHING_SHOES,
+        CONSUMABLE
     }
 
     [SerializeField] bool m_active;
