@@ -8,7 +8,6 @@ public class ShopInterface : UIScreen
 {
     [SerializeField] Text m_titleText;
     [SerializeField] Text m_coinsText;
-    [SerializeField] Text m_gemsText;
     [SerializeField] Transform m_storeContentContainer;
     [SerializeField] GameObject m_itemPrefab;
 
@@ -28,6 +27,7 @@ public class ShopInterface : UIScreen
     public override void Hide()
     {
         base.Hide();
+        m_activeShop?.OnClosedInterface();
         GameManager.Instance.Player?.AllowInput(true);
     }
 
@@ -35,7 +35,6 @@ public class ShopInterface : UIScreen
     {
         m_titleText.text = m_activeShop.ShopName;
         m_coinsText.text = GameManager.Instance.PlayerInventory.Coins.ToString();
-        m_gemsText.text = GameManager.Instance.PlayerInventory.Gems.ToString();
     }
 
     void UpdateStoreContent()
@@ -50,6 +49,7 @@ public class ShopInterface : UIScreen
         {
             ShopItem shopItem = GameObject.Instantiate(m_itemPrefab,m_storeContentContainer).GetComponent<ShopItem>();
             shopItem.Setup(item,BuyItem,SellItem);
+            m_items.Add(shopItem);
         }
 
     }
