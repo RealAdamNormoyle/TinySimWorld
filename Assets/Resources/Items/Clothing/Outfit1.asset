@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_active: 1
   m_name: Tanned Leather Jacket
-  m_description: 
+  m_description: Some item description
   m_icon: {fileID: 21300000, guid: 4bf275e78d0dc194bb9d794f00a6aae9, type: 3}
   m_cost: 150
   m_type: 0

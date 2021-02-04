@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_active: 1
   m_name: Rags
-  m_description: 
+  m_description: Some item description
   m_icon: {fileID: 21300000, guid: a62fab6510a268e47b5efce322ce4a6f, type: 3}
   m_cost: 50
   m_type: 0

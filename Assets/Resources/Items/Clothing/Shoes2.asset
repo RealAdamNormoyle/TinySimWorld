@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_active: 1
   m_name: Green Healing Boots
-  m_description: 
+  m_description: Some item description
   m_icon: {fileID: 21300000, guid: dff1187808342bd4f88c39c301d8625d, type: 3}
   m_cost: 250
   m_type: 1
