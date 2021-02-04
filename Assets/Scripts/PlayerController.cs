@@ -33,7 +33,7 @@ public class PlayerController : MonoBehaviour
     {
         m_character.UpdateLookDirection(m_movementDirection);
 
-        if (m_allowInput && m_allowMove)
+        if (m_allowInput & m_allowMove)
             Movement();
     }
 
