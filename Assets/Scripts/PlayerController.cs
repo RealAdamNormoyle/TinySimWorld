@@ -16,6 +16,11 @@ public class PlayerController : MonoBehaviour
         m_character = GetComponentInChildren<Character>();
         m_allowMove = true;
         m_allowInput = true;
+
+        foreach (var item in GameManager.Instance.PlayerInventory.EquippedItems)
+        {
+            EquipClothingItem((ClothingItem)item);
+        }
     }
 
     void Update()
@@ -53,4 +58,8 @@ public class PlayerController : MonoBehaviour
         m_allowInput = val;
     }
 
+    public void EquipClothingItem(ClothingItem item)
+    {
+        m_character.SetClothingSprites(item.Type,item.Sprites);
+    }
 }
