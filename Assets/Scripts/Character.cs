@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -25,7 +26,6 @@ public class Character : MonoBehaviour
 
         if (IsMoving)
         {
-            Debug.Log(dir);
             HideAllParts();
             if(dir.y > 0)
             {
@@ -37,8 +37,27 @@ public class Character : MonoBehaviour
             else
             {
                 m_partCollections[1].gameObject.SetActive(true);
-                transform.localScale = new Vector3((m_lookDirection.x < 0) ? 1 : -1, 1, 1);
+                transform.localScale = new Vector3((m_lookDirection.x < 0) ? 0.3f : -0.3f, 0.3f, 1);
             }
+        }
+    }
+
+    public void SetClothingSprites(Item.ItemType type, Sprite[] sprites)
+    {
+        switch (type)
+        {
+            case Item.ItemType.CLOTHING_TOP:
+                for (int i = 0; i < 3; i++)
+                {
+                    m_partCollections[i].SetBodySprite(sprites[i]);
+                }
+                break;
+            case Item.ItemType.CLOTHING_SHOES:
+                for (int i = 0; i < 3; i++)
+                {
+                    m_partCollections[i].SetShoeSprite(sprites[i]);
+                }
+                break;
         }
     }
 
