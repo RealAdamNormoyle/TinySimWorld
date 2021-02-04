@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 259925e14de1022409411d677f34f0b1, type: 3}
-  m_Name: Outfit2
+  m_Name: Shoes2
   m_EditorClassIdentifier: 
   m_active: 1
-  m_name: Black Cloak
+  m_name: Green Healing Boots
   m_description: 
-  m_icon: {fileID: 21300000, guid: c7c78ebb654c51045b7537fdb55228e2, type: 3}
-  m_cost: 200
-  m_type: 0
+  m_icon: {fileID: 21300000, guid: dff1187808342bd4f88c39c301d8625d, type: 3}
+  m_cost: 250
+  m_type: 1
   m_sprites:
-  - {fileID: 21300000, guid: c7c78ebb654c51045b7537fdb55228e2, type: 3}
-  - {fileID: 21300000, guid: aca036930f5d75b4e916f66ae1d3278a, type: 3}
-  - {fileID: 21300000, guid: 07519c9cfc4c8bd45aed609df610f155, type: 3}
+  - {fileID: 21300000, guid: dff1187808342bd4f88c39c301d8625d, type: 3}
+  - {fileID: 21300000, guid: 2020c570a764ad14ebd22e5b9fd64955, type: 3}
+  - {fileID: 21300000, guid: 28b23b15701fcf24f8ba942220825686, type: 3}
