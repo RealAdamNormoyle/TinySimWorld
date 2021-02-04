@@ -71,6 +71,8 @@ public class ShopInterface : UIScreen
         GameManager.Instance.PlayerInventory.Items.Add(item);
 
         UpdateItemButtons();
+        m_coinsText.text = GameManager.Instance.PlayerInventory.Coins.ToString();
+
     }
 
     public void SellItem(Item item)
@@ -82,5 +84,7 @@ public class ShopInterface : UIScreen
             GameManager.Instance.PlayerInventory.Coins += item.Cost / 2;
 
         UpdateItemButtons();
+        m_coinsText.text = GameManager.Instance.PlayerInventory.Coins.ToString();
+
     }
 }
