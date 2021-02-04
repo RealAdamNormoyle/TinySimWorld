@@ -34,7 +34,11 @@ public class InventoryInterface : UIScreen
         foreach (var item in GameManager.Instance.PlayerInventory.Items)
         {
             InventoryItem inventoryItem = GameObject.Instantiate(m_itemPrefab, m_contentContainer).GetComponent<InventoryItem>();
-            inventoryItem.Setup(item, OnEquipItem);
+            if(item.Type == Item.ItemType.CONSUMABLE)
+                inventoryItem.Setup(item, OnUseItem);
+            else
+                inventoryItem.Setup(item, OnEquipItem);
+            
             m_items.Add(inventoryItem);
         }
     }
@@ -45,4 +49,9 @@ public class InventoryInterface : UIScreen
         UpdateContent();
     }
 
+    public void OnUseItem(Item item)
+    {
+        GameManager.Instance.PlayerUseItem(item);
+        UpdateContent();
+    }
 }

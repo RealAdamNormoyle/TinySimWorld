@@ -44,6 +44,11 @@ public class GameManager : Singleton<GameManager>
         m_camera.SetTarget(m_player.transform);
     }
 
+    public void PlayerUseItem(Item item)
+    {
+        PlayerInventory.Items.Remove(item);
+    }
+
     public void PlayerEquipItem(Item item)
     {
         if((int)item.Type < 2)
