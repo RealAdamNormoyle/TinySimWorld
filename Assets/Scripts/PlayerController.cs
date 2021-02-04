@@ -36,6 +36,11 @@ public class PlayerController : MonoBehaviour
     {
         m_movementDirection.y = (int)Input.GetAxis("Vertical");
         m_movementDirection.x = (int)Input.GetAxis("Horizontal");
+
+        if (Input.GetButtonDown("Inventory"))
+        {
+            GameManager.Instance.InventoryInterface.Show();
+        }
     }
 
     void Movement()
