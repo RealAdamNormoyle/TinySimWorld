@@ -13,6 +13,18 @@ public class UIScreen : MonoBehaviour
         m_canvas = GetComponent<CanvasGroup>();
     }
 
+    public virtual void Start()
+    {
+        Hide();
+    }
+
+    public void Update()
+    {
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+            Hide();
+    }
+
     public virtual void Show()
     {
         m_canvas.alpha = 1;
